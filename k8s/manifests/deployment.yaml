@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-web-app
+  labels:
+    app: go-web-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-web-app
+  template:
+    metadata:
+      labels:
+        app: go-web-app
+    spec:
+      containers:
+      - name: go-web-app
+        image: ryanabynoe/go-web-app:v1  # Specify the correct image tag if needed
+        ports:
+        - containerPort: 9090
+      imagePullSecrets:
+      - name: my-registry-secret  # Reference the created secret for private registry access
