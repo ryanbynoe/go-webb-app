@@ -10,7 +10,6 @@ spec:
   - port: 80
     targetPort: 9090
     protocol: TCP
-    nodePort: 30080  # This is the port on which the service will be exposed on the node
   selector:
     app: go-web-app
-  type: NodePort
+  type: ClusterIP

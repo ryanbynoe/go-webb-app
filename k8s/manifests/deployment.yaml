@@ -1,3 +1,4 @@
+# This is a sample deployment manifest file for a simple web application.
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,8 +17,6 @@ spec:
     spec:
       containers:
       - name: go-web-app
-        image: ryanabynoe/go-web-app:v1  # Specify the correct image tag if needed
+        image: ryanabynoe/go-web-app
         ports:
         - containerPort: 9090
-      imagePullSecrets:
-      - name: my-registry-secret  # Reference the created secret for private registry access
