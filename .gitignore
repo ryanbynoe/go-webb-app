@@ -7,6 +7,10 @@
 *.dll
 *.so
 *.dylib
+# Exclude build artifacts and local files
+build/
+.git/
+
 
 # Test binary, built with `go test -c`
 *.test
